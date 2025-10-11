@@ -4,39 +4,40 @@
     <meta charset="UTF-8">
     <link href="../style.css" rel="stylesheet">
     <title>Contact</title>
-    <h1>Contact</h1>
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="../index.html">Main</a></li>
-            <li><a href="index.html">Contact</a></li>
+            <li><a href="index.html" class="current">Contact</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../resume/index.html">Resume</a></li>
             <li><a href="https://github.com/ghost-written" target="_blank">Github</a></li>
         </ul>
     </nav>
 
-    <br><form action="mailto:notusing@myrealemail.com" method="POST" enctype="text/plain">
+    <h1>Contact</h1>
+
+    <form action="mailto:notusing@myrealemail.com" method="POST" enctype="text/plain">
         <label>
             Your Email Address
             <br>
             <input name="email" type="email">
         </label>
 
-        <br><br><label>
+        <label>
             Subject
             <br>
             <input name="subject">
         </label>
 
-        <br><br><label>
+        <label>
             Email Contents
             <br>
             <textarea name="body"></textarea>
         </label>
 
-        <br><br><button>Submit</button>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
