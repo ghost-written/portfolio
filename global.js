@@ -1,5 +1,3 @@
-console.log("IT’S ALIVE!");
-
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
@@ -25,6 +23,26 @@ function setColorScheme(scheme) {
   console.log('color scheme changed to', scheme);
 }
 
+
+if (linkURL.host === location.host &&
+    normalize(linkURL.pathname) === normalize(location.pathname)) {
+  a.classList.add('current');
+}
+
+document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+    <label class="color-scheme">
+      Theme:
+      <select id="color-scheme">
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+    `
+  );
+
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
@@ -41,25 +59,6 @@ for (let p of pages) {
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
   }
-
-  a.classList.toggle(
-  'current',
-  a.host === location.host && a.pathname === location.pathname,
-  );
-
-  document.body.insertAdjacentHTML(
-    'afterbegin',
-    `
-    <label class="color-scheme">
-      Theme:
-      <select id="color-scheme">
-        <option value="light dark">Automatic</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    </label>
-    `
-  );
 
   const select = document.querySelector('#color-scheme');
 
