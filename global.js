@@ -86,19 +86,24 @@ export async function fetchJSON(url) {
   }
 }
 
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
-  // Your code will go here
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
 
   projects.forEach((project) => {
     const article = document.createElement('article');
 
     article.innerHTML = `
-        <h3>${project.title}</h3>
-        <img src="${project.image}" alt="${project.title}">
-        <p>${project.description}</p>
+      <${headingLevel}>${project.title}</${headingLevel}>
+      ${project.year ? `<p class="project-year">${project.year}</p>` : ''}
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
     `;
 
     containerElement.appendChild(article);
-});
+  });
+}
+
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
 }

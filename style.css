@@ -69,15 +69,46 @@ button[type="submit"] {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1em;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
 }
 
-article {
+.projects article {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
+  grid-template-rows: auto auto auto 1fr;
+  row-gap: 0.75rem;
 }
+
+.project-title { margin: 0.25em 0 0; line-height: 1.15; }
+.project-year  { margin: 0; font-size: 0.95rem; font-style: italic; color: #666; }
+
+.project-media {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  background: transparent;
+  overflow: hidden;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: oklch(0.85 0.02 200 / 0.8);
+  color: oklch(0.4 0.02 200 / 0.8);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.project-desc { margin: 0; }
+
 
 h2 {
   margin: 0.25em 0 0;
@@ -118,6 +149,30 @@ section:hover {
   gap: 0.25rem;
 }
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.stats-grid dt {
+  font-weight: bold;
+  grid-row: 1;
+}
+
+.stats-grid dd {
+  margin: 0;
+  grid-row: 2;
+}
+
+.project-year {
+  display: block;
+  margin: 0.25em 0 0.75em 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
 
 
 
